@@ -14,7 +14,7 @@ time-consuming. The simulations are already performed and the results are
 saved in the ```data\``` folder. The simulation code is provided mainly to show how the
 simulations were done, but feel free to run the simulations again if you want to.
 
-Note: The full grid run took ~8h using a parfor loop.
+Note: the full grid run took ~8h using a parfor loop.
 
 ## How to reproduce the analyses and figures from the article
 
