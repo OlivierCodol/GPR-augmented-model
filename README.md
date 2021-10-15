@@ -1,5 +1,5 @@
 # GPR-augmented-model
-GRP model augmented with differential D1 and D2 functional weights
+GRP model augmented with differential D1 and D2 functional weights.
 
 This is the code and data for the article available here:
 https://www.biorxiv.org/content/10.1101/2020.11.12.380451v1
