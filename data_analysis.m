@@ -100,9 +100,7 @@ xline( 1 ,'linestyle','--','color',[0 0 0],'parent',h)
 yline( Q_max ,'linestyle','--','color',[0 0 0],'parent',h)
 xlabel('W_{D1} / W_{D2}')
 ylabel('Q value')
-text(h.XLim(2)+20, Q_max,['Qmax'])
-% text(15, Q_max+0.4,['Q = ' num2str(Q_max)])
-% text(ratio_max+1, -1.1,      ['ratio = ' num2str(ratio_max)])
+text(h.XLim(2)+20, Q_max, ['Qmax'])
 h.XTickLabel = {'0.1';'1';'10';'100';'1000'};
 h.YAxis.Limits(2) = 0.5;
 
@@ -112,11 +110,6 @@ xline(1)
 xline(median(D1n ./ D2n), '--', 'color','r', 'LineWidth',2)
 ylim([0 max(histcounts(D1n ./ D2n)) * 1.1])
 h.XAxis.TickDirection = 'out';
-% h.YAxis.Scale = 'log';
-% h.YAxis.TickValues = [1, 10, 100, 1000];
-% h.YAxis.TickLabels = {'1';'10';'100';'1000'};
-% h.XAxis.TickValues = 0:(1 + max(Rn(Rn<Inf)));
-% h.XAxis.TickLabels = cellfun(@(x) num2str(x), num2cell(h.XAxis.TickValues), 'UniformOutput',false);
 xlabel('D1 / D2 weight ratio')
 ylabel('count')
 legendline(hf(2), {'median'}, [1 0 0], 'position', [0.75 0.87 0.2 0.019], 'linestyle',{'--'}, 'linewidth',2);
