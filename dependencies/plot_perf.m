@@ -4,7 +4,6 @@ function h = plot_perf(h, xdata, ydata, zdata, zlabelstr, Q)
 Z = reshape(zdata,[],length(xdata));
 
 
-% filled contour plot
 % contourf( h , xdata , ydata , Z );
 imagesc( h , xdata , ydata , Z ,'AlphaData',double(~isnan(Z)));
 
@@ -39,7 +38,3 @@ annotation(h.Parent,'textbox',[pos_x ,pos_y,.05,.05],'string',zlabelstr,...
     'VerticalAlignment','bottom',...
     'HorizontalAlignment','left',...
     'FontSize',fs)
-
-
-
-

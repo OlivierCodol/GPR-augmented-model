@@ -95,14 +95,17 @@ hf(2).Units = 'pixels';
 hf(2).Position = [800 20 600 300];
 h = subplot(1,2,1);
 
-semilogx( ratio, Q(:), '.','parent',h,'color','k')
-xline( 1 ,'linestyle','--','color',[0 0 0],'parent',h)
-yline( Q_max ,'linestyle','--','color',[0 0 0],'parent',h)
+plot( ratio, Q(:), '.','parent',h,'color','k')
+xline( 0.6 ,'linestyle','-','color',[1 0 0],'parent',h)
+yline( 0 ,'linestyle','-','color',[1 0 0],'parent',h)
+symlog(h, 'y')
+%yline( Q_max ,'linestyle','--','color',[0 0 0],'parent',h)
 xlabel('W_{D1} / W_{D2}')
 ylabel('Q value')
-text(h.XLim(2)+20, Q_max, ['Qmax'])
-h.XTickLabel = {'0.1';'1';'10';'100';'1000'};
-h.YAxis.Limits(2) = 0.5;
+text(1, 0.3, ['ratio = 0.6'], 'Color',[1 0 0])
+% h.XTickLabel = {'0.1';'1';'10';'100';'1000'};
+h.YAxis.Limits = [-1.1 0.5];
+h.XAxis.Scale = 'log';
 
 h = subplot(1,2,2);
 histogram(D1n ./ D2n, 'edgecolor','none');
@@ -213,7 +216,7 @@ subplot(2,2,3)
 [~,ix] = max(Q);
 plot(Rw, hard(:,ix),'color','k','LineStyle','-' ); hold on
 plot(Rw, soft(:,ix),'color','k','LineStyle','-.');
-text(5.8, 8,['Q = ' num2str(Q(ix))],'FontSize',8)
+text(7, 8,['Q = ' num2str(round(Q(ix),2))],'FontSize',8)
 grid minor
 ylabel('fit to template (%)')
 xlabel('R_w')
@@ -231,7 +234,7 @@ subplot(2,2,4)
 ix=1104;
 plot(Rw, hard(:,ix),'color','k','LineStyle','-' ); hold on
 plot(Rw, soft(:,ix),'color','k','LineStyle','-.');
-text(5.8, 8,['Q = ' num2str(Q(ix))],'FontSize',8)
+text(6.8, 8,['Q = ' num2str(round(Q(ix),2))],'FontSize',8)
 grid minor
 xlabel('R_w')
 xlim([1 10])
@@ -298,14 +301,14 @@ plot(t, GPi_output(1,:), 'color', 'k'); hold on
 plot(t, salience(1,:), '--', 'color', 'k')
 ylim([-0.05 0.8])
 ylabel('signal level (a.u.)')
-xlabel('timestep (a.u.)')
+xlabel('time')
 title('Channel 1')
 
 subplot(1,2,2)
 plot(t, GPi_output(2,:), 'color', 'k'); hold on
 plot(t, salience(2,:), '--', 'color', 'k')
 ylim([-0.05 0.8])
-xlabel('timestep (a.u.)')
+xlabel('time')
 title('Channel 2')
 
 

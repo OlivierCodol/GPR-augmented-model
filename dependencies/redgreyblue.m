@@ -10,7 +10,7 @@ else
 end
 
 m1 = floor(m*CENTER);
-topval = 0.85; % brightness of the grey (if 1, then it becomes white)
+topval = 0.7; % brightness of the grey (if 1, then it becomes white)
 
 r = reshape(linspace(0,topval,m1),[],1);
 g = r;
