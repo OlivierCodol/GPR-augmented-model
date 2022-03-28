@@ -313,7 +313,7 @@ title('Channel 2')
 
 
 % plot legend
-legendline(hf(6),{'GPi output';'';'';'salience'},...  % labels
+legendline(hf(6),{'GPi output (Yi)';'';'';'salience'},...  % labels
                  zeros(4,3),...                 % colors
                  'linestyle',[{'-'};{'none'};{'none'};{'--'}],... % linestyle
                  'position',[.14 .8 .3 .075]... % position in figure
